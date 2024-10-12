@@ -11,29 +11,30 @@ import kotlin.random.Random
 class CardsApplication
 
 fun main(args: Array<String>) {
-	runApplication<CardsApplication>(*args)
+    runApplication<CardsApplication>(*args)
 }
 
 @Component
 class Playground : ApplicationRunner {
-	override fun run(args: ApplicationArguments?) {
-		val data = createData()
-		val randomIndex = Random.nextInt(data.size)
-		val pair = data[randomIndex]
-		val front = pair.first
-		val back = pair.second
+    override fun run(args: ApplicationArguments?) {
+        val data = createData()
+        repeat(10) {
+            val randomIndex = Random.nextInt(data.size)
+            val pair = data[randomIndex]
+            val front = pair.first
+            val back = pair.second
 
+            print("front: $front")
+            readln()
+            println("back: $back")
+        }
+    }
 
-		print("front: $front")
-		readln()
-		println("back: $back")
-	}
-
-	private fun createData(): List<Pair<String, String>> = listOf(
-		"slow" to "langsam",
-		"fast" to "schnell",
-		"big" to "gross",
-		"small" to "klein",
-	)
+    private fun createData(): List<Pair<String, String>> = listOf(
+        "slow" to "langsam",
+        "fast" to "schnell",
+        "big" to "gross",
+        "small" to "klein",
+    )
 
 }
