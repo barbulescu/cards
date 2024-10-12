@@ -18,11 +18,9 @@ fun main(args: Array<String>) {
 class Playground : ApplicationRunner {
     override fun run(args: ApplicationArguments?) {
         val data = createData()
-        repeat(10) {
-            val randomIndex = Random.nextInt(data.size)
-            val pair = data[randomIndex]
-            val front = pair.first
-            val back = pair.second
+        data.forEach {
+            val front = it.first
+            val back = it.second
 
             print("front: $front")
             readln()
@@ -35,6 +33,6 @@ class Playground : ApplicationRunner {
         "fast" to "schnell",
         "big" to "gross",
         "small" to "klein",
-    )
+    ).shuffled()
 
 }
