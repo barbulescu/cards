@@ -1,0 +1,20 @@
+{
+  "data": [
+    {
+      "front": "slow",
+      "back": "langsam"
+    },
+    {
+      "front": "fast",
+      "back": "schnell"
+    },
+    {
+      "front": "big",
+      "back": "gross"
+    },
+    {
+      "front": "small",
+      "back": "klein"
+    }
+  ]
+}
