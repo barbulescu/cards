@@ -5,34 +5,28 @@ import org.springframework.boot.ApplicationRunner
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.stereotype.Component
-import kotlin.random.Random
 
 @SpringBootApplication
 class CardsApplication
 
 fun main(args: Array<String>) {
-    runApplication<CardsApplication>(*args)
+    runApplication<CardsApplication>(args = args)
 }
 
 @Component
 class Playground : ApplicationRunner {
     override fun run(args: ApplicationArguments?) {
-        val data = createData()
-        data.forEach {
-            val front = it.first
-            val back = it.second
-
+        createData().forEach { (front, back) ->
             print("front: $front")
-            readln()
+            readlnOrNull()
             println("back: $back")
         }
     }
 
-    private fun createData(): List<Pair<String, String>> = listOf(
-        "slow" to "langsam",
-        "fast" to "schnell",
-        "big" to "gross",
-        "small" to "klein",
+    private fun createData(): List<Card> = listOf(
+        "slow" pair "langsam",
+        "fast" pair "schnell",
+        "big" pair "gross",
+        "small" pair "klein",
     ).shuffled()
-
 }
