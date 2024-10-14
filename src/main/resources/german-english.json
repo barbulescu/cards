@@ -1,0 +1,20 @@
+{
+  "data": [
+    {
+      "key": "slow",
+      "value": "langsam"
+    },
+    {
+      "key": "fast",
+      "value": "schnell"
+    },
+    {
+      "key": "big",
+      "value": "gross"
+    },
+    {
+      "key": "small",
+      "value": "klein"
+    }
+  ]
+}
