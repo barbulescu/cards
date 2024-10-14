@@ -1,5 +1,6 @@
 package ch.barbulescu.cards
 
+import ch.barbulescu.cards.data.germanEnglish
 import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner
 import org.springframework.boot.autoconfigure.SpringBootApplication
@@ -16,17 +17,11 @@ fun main(args: Array<String>) {
 @Component
 class Playground : ApplicationRunner {
     override fun run(args: ApplicationArguments?) {
-        createData().forEach { (front, back) ->
+        germanEnglish.data.forEach { (front, back) ->
             print("front: $front")
             readlnOrNull()
             println("back: $back")
         }
     }
 
-    private fun createData(): List<Card> = listOf(
-        "slow" pair "langsam",
-        "fast" pair "schnell",
-        "big" pair "gross",
-        "small" pair "klein",
-    ).shuffled()
 }
